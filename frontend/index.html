@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskBoard — Управление задачами</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>📋 TaskBoard</h1>
+            <p class="subtitle">Управляй своими задачами</p>
+        </header>
+
+        <main>
+            <!-- Форма добавления задачи -->
+            <section class="add-section">
+                <h2>➕ Новая задача</h2>
+                <div class="form-group">
+                    <input type="text" id="inputTitle" placeholder="Название задачи" class="form-input">
+                    <textarea id="inputDesc" placeholder="Описание (необязательно)" rows="2" class="form-textarea"></textarea>
+                    <button id="btnAdd" class="btn-add">➕ Добавить задачу</button>
+                </div>
+                <p class="error-message" id="errorMessage"></p>
+            </section>
+
+            <!-- Фильтры -->
+            <section class="filters-section">
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">Все</button>
+                    <button class="filter-btn" data-filter="active">В работе</button>
+                    <button class="filter-btn" data-filter="completed">Выполненные</button>
+                </div>
+                <span class="tasks-count" id="tasksCount"></span>
+            </section>
+
+            <!-- Статус загрузки -->
+            <div class="loading-container" id="loadingContainer">
+                <div class="loader"></div>
+                <p>Загрузка задач...</p>
+            </div>
+
+            <!-- Список задач -->
+            <ul class="tasks-list" id="tasksList"></ul>
+        </main>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
